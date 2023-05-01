@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div(id='viewport')
+      div(class='container')
+        div(id='header', class='row')
+          div(class='col text-center') My nodejs blog
+        div(id='navbar', class='row')
+          div(class='col')
+            div(class='topbutton')
+              a(href='/') Home
+          div(class='col')
+            div(class='topbutton')
+              a(href='/about') About
+          div(class='col')
+            div(class='topbutton')
+              if logged_in
+                a(href='/admin') Admin
+              else
+                a(href='/login') Login
+        div(id='content')
+          block content
+    footer(class='footer text-muted')
+      div Generated using jsblog. Software soon available under GNU GPLv3.

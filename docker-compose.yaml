@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+
+  mongodb:
+    image: mongo:6-jammy
+    container_name: mongodb
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./mongo-data:/data/db
+    networks:
+      - jsblog-network
+
+  jsblog:
+    build: ./express-app
+    image: jsblog
+    container_name: jsblog
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/jsblog
+    ports:
+      - '8085:3000'
+    depends_on:
+      - mongodb
+    volumes:
+      - ./express-app:/src
+    networks:
+      - jsblog-network
+
+networks:
+  jsblog-network:
+    driver: bridge

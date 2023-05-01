@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  p Enter your login credentials below:
+  form(method='POST')
+    div Username 
+      input(name='username')
+    div(class='mt-2') Password 
+      input(name='password', type='password')
+    div(class='mt-2')
+      input(type='submit')
+
+    if error
+      div(class='text-danger') #{error}

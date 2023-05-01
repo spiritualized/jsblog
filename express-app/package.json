@@ -1,0 +1,23 @@
+{
+  "name": "express-app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bbcode": "^0.1.5",
+    "bootstrap": "^5.2.3",
+    "cookie-parser": "~1.4.4",
+    "date-and-time": "^3.0.0",
+    "debug": "~2.6.9",
+    "escape-html": "^1.0.3",
+    "express": "^4.18.2",
+    "hash.js": "^1.1.7",
+    "http-errors": "~1.6.3",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.1.0",
+    "morgan": "~1.9.1",
+    "pug": "^3.0.2"
+  }
+}

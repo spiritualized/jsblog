@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h3 User control panel
+  div
+    a(class='float-end', href='/logout') Log out
+  div(class='mt-5 p-4 border')
+    h4 Create a new blog post
+    form(method="POST")
+      div(class='row mt-4')
+        div(class='col-2')
+          | Title 
+        div(class='col-4')
+          input(class='w-100' type='text' name='title' value=`${existingTitle || ''}`)
+      div(class='row mt-4')
+        div(class='col-2')
+          | Content
+        div(class='col-10')
+          textarea(name='content' rows='15') #{existingContent || ''}
+      div(class='row')
+        div(class='col')
+          input(type='submit' class='float-end')
+
+    if error
+      div(class='text-danger') #{error}
